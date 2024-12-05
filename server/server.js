@@ -17,19 +17,19 @@ app.get("/api/timenode", async function(req,res){
 
     // const { lat, long } = req.query;
     const apiUrl = `//api.timezonedb.com/v2.1/get-time-zone?key=${timeapi_key}&format=xml&by=position&lat=${lat}&lng=${long}`;
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+    const tresponse = await fetch(apiUrl);
+    const tdata = await response.json();
 
     // OpenWeatherMap API URL for weather data
     const weatherUrl = `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api_key}&units=metric`;
-    const response= await fetch(apiUrl);
-    const data= await response.json();
+    // const response= await fetch(apiUrl);
+    // const data= await response.json();
     
 
     const wresponse=await fetch(weatherUrl);
     const wdata=await wresponse.json();
 
-    res.send(json({ldata,data, wdata}))
+    res.send(json({ldata,tdata, wdata}))
 }
 catch(error){
     console.log(error)
