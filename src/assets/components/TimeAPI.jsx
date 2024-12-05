@@ -15,7 +15,7 @@ function TimeAPI({ long, lat,SetTime }) {
                 console.log("Respond got")
             }
             else{console.log("Responfd not got during ai fetch")}
-            const tdata= await res.data;
+            const tdata= await res.tdata;
             const text = await tdata.text(); // Get response as text
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(text, "text/xml"); // Parse XML
