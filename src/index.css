@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Add this in your CSS file or in a <style> tag in your component if using CSS-in-JS */
+.rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+  
